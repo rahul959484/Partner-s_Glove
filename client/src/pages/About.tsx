@@ -36,8 +36,8 @@ export default function About() {
             >
               {/* Warehouse/Team image */}
               <img 
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2670&auto=format&fit=crop" 
-                alt="Our Team" 
+                src="/assets/gloves2_1771408710952.jpg" 
+                alt="Our Manufacturing Unit" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />

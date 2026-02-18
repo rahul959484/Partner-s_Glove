@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const sectors = [
   {
     name: "Automotive",
-    image: "https://images.unsplash.com/photo-1563536310477-c7b4e3a800d2?q=80&w=2670&auto=format&fit=crop",
+    image: "/assets/gloves1_1771408702326.jpg",
     desc: "Precision handling and heat resistance for assembly lines."
   },
   {

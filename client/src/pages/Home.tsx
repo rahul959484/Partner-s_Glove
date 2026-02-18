@@ -8,9 +8,20 @@ export default function Home() {
     <PageTransition>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Abstract Background */}
-        <div className="absolute inset-0 mesh-gradient opacity-60" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          >
+            <source src="/assets/WhatsApp_Video_2026-02-18_at_3.23.18_PM_1771408727902.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+          <div className="absolute inset-0 mesh-gradient opacity-40" />
+        </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -134,7 +145,7 @@ export default function Home() {
       {/* Visual Break / CTA */}
       <section className="py-32 relative overflow-hidden">
         {/* Industrial background image */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-fixed bg-center opacity-20" />
+        <div className="absolute inset-0 bg-[url('/assets/gloves2_1771408710952.jpg')] bg-cover bg-fixed bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
         
         <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
