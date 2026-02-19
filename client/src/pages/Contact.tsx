@@ -71,12 +71,12 @@ export default function Contact() {
               </div>
 
               {/* Google Maps Embed */}
-              <div className="mt-12 h-64 rounded-2xl border border-white/10 bg-accent/20 relative overflow-hidden group">
+              <div className="mt-12 h-80 rounded-2xl border border-white/10 bg-accent/20 relative overflow-hidden group">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095919355!2d-74.00425878459395!3d40.71312937933039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316bb4b1c7%3A0x4e7b8b5b5b5b5b5b!2s123%20Innovation%20Blvd%2C%20Tech%20District%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8184903090987!2d72.88245752346801!3d19.366888268717743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1e5b1e5b1e5%3A0x5b5b5b5b5b5b5b5b!2sNaigaon%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1645161891234"
                   width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
+                  height="320"
+                  style={{ border: 0, display: 'block' }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

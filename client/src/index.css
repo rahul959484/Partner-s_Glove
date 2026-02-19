@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  /* HSL Values */
+  /* HSL Values - Dark Theme (default) */
   --background: 240 10% 4%;       /* Very dark navy/black #09090b */
   --foreground: 0 0% 98%;         /* White #fafafa */
   
@@ -27,6 +27,28 @@
   
   --font-display: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
+}
+
+.light {
+  /* Light Theme Colors */
+  --background: 0 0% 100%;        /* White #ffffff */
+  --foreground: 240 10% 4%;       /* Very dark navy/black #09090b */
+  
+  --primary: 190 100% 50%;        /* Neon Cyan #00f0ff */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 270 100% 60%;      /* Electric Purple #8a2be2 */
+  --secondary-foreground: 0 0% 100%;
+  
+  --accent: 240 5% 96%;           /* Light grey for cards #f5f5f5 */
+  --accent-foreground: 240 10% 4%;
+  
+  --muted: 240 5% 85%;            /* Light muted grey */
+  --muted-foreground: 240 5% 45%;
+  
+  --border: 240 5% 85%;
+  --input: 240 5% 85%;
+  --ring: 190 100% 50%;
 }
 
 @layer base {
@@ -55,7 +77,7 @@
   }
   
   .mesh-gradient {
-    background-color: hsla(240, 10%, 4%, 1);
+    background-color: hsl(var(--background));
     background-image: 
       radial-gradient(at 0% 0%, hsla(270,100%,60%,0.15) 0px, transparent 50%),
       radial-gradient(at 100% 0%, hsla(190,100%,50%,0.15) 0px, transparent 50%),
