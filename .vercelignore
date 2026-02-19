@@ -1,0 +1,10 @@
+.git
+.gitignore
+README.md
+.env.local
+.env.*.local
+*.log
+node_modules
+dist
+.next
+.turbo
