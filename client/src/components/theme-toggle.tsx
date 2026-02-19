@@ -1,4 +1,3 @@
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -10,11 +9,11 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
-  const isDark = theme === "dark" || (theme === "system" && typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const current = theme === "system" ? (typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : theme;
+
+  const isDark = current === "dark";
 
   return (
     <button
@@ -24,8 +23,8 @@ export function ThemeToggle() {
       title={isDark ? "Night (default)" : "Day"}
     >
       <span className="relative flex items-center">
-        <Sun className={`h-[1.2rem] w-[1.2rem] transition-all ${isDark ? "opacity-40" : "opacity-100"}`} />
-        <Moon className={`absolute h-[1.2rem] w-[1.2rem] transition-all ${isDark ? "opacity-100" : "opacity-0"}`} />
+        <img src="/sun.svg" alt="day" className={`h-5 w-5 transition-opacity ${isDark ? "opacity-40" : "opacity-100"}`} />
+        <img src="/moon.svg" alt="night" className={`absolute h-5 w-5 transition-opacity ${isDark ? "opacity-100" : "opacity-0"}`} />
       </span>
       <span className="text-xs font-medium">{isDark ? "Night" : "Day"}</span>
     </button>
