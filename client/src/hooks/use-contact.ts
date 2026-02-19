@@ -25,7 +25,8 @@ export function useSubmitContact() {
         throw new Error("Failed to submit message");
       }
       
-      return api.contact.submit.responses[201].parse(await res.json());
+      // Parse the 200 response instead of 201
+      return api.contact.submit.responses[200].parse(await res.json());
     },
     onSuccess: () => {
       toast({

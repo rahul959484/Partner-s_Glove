@@ -40,7 +40,7 @@ export function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
-          <img src="/assets/glovelogo_1771408692026.jpg" alt="Partner Gloves Logo" className="w-10 h-10 object-contain rounded-lg" />
+          <img src="/glovelogo_1771408692026.jpg" alt="Partner Gloves Logo" className="w-10 h-10 object-contain rounded-lg" />
           <span className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70 group-hover:to-primary transition-all duration-300">
             PARTNER<span className="text-primary">GLOVES</span>
           </span>

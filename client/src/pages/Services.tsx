@@ -10,6 +10,7 @@ const services = [
     desc: "Reinforced Kevlar® blend gloves designed for extreme abrasion resistance and cut protection in manufacturing environments.",
     icon: Hammer,
     color: "from-orange-500 to-red-600",
+    image: "/h.jpg",
     features: ["Cut Level A9", "Impact Resistant", "High Heat Tolerance"]
   },
   {
@@ -18,6 +19,7 @@ const services = [
     desc: "Advanced polymer barriers providing impermeable protection against corrosive acids, alkalis, and solvents.",
     icon: Pipette,
     color: "from-green-400 to-emerald-600",
+    image: "/c.jpg",
     features: ["EN 374 Certified", "Textured Grip", "Long Cuff Design"]
   },
   {
@@ -26,6 +28,7 @@ const services = [
     desc: "Ultra-thin, high-dexterity coatings for electronics and fine mechanics where tactile sensitivity is paramount.",
     icon: HardHat,
     color: "from-blue-400 to-cyan-500",
+    image: "/p.jpg",
     features: ["Touchscreen Compatible", "Breathable Knit", "Anti-Static"]
   },
   {
@@ -34,6 +37,7 @@ const services = [
     desc: "Sterile, powder-free nitrile solutions for healthcare professionals requiring biological barrier protection.",
     icon: ShieldAlert,
     color: "from-purple-500 to-pink-500",
+    image: "/m.jpg",
     features: ["Medical Grade", "Chemo Tested", "Latex Free"]
   }
 ];
@@ -64,8 +68,20 @@ export default function Services() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                 
                 <div className="p-10 relative z-10 flex flex-col h-full">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-8 shadow-lg transform group-hover:scale-110 transition-transform duration-500`}>
-                    <service.icon className="text-white w-8 h-8" />
+                  {/* Service Image */}
+                  <div className="relative h-48 mb-6 rounded-2xl overflow-hidden group">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20`} />
+                  </div>
+                  
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500 flex-shrink-0`}>
+                      <service.icon className="text-white w-8 h-8" />
+                    </div>
                   </div>
                   
                   <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors">

@@ -13,9 +13,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <ShieldCheck className="text-white w-5 h-5" />
-              </div>
+              <img src="/glovelogo_1771408692026.jpg" alt="Partner Gloves Logo" className="w-8 h-8 object-contain rounded-lg" />
               <span className="text-xl font-bold tracking-tighter text-white">
                 PARTNER<span className="text-primary">GLOVES</span>
               </span>
@@ -69,11 +67,11 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
-                <span>123 Innovation Blvd,<br />Tech District, NY 10001</span>
+                <span>jai baba chawal waki pada,<br />Naigaon east</span>
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 98678 93902</span>
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary shrink-0" />

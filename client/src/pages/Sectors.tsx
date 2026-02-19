@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const sectors = [
   {
     name: "Automotive",
-    image: "/assets/gloves1_1771408702326.jpg",
+    image: "/automotive.jpg",
     desc: "Precision handling and heat resistance for assembly lines."
   },
   {
@@ -14,17 +14,17 @@ const sectors = [
   },
   {
     name: "Oil & Gas",
-    image: "https://images.unsplash.com/photo-1516937941348-c09e554b9631?q=80&w=2670&auto=format&fit=crop",
+    image: "/oli.jpg",
     desc: "Chemical resistant and anti-slip technology for offshore rigs."
   },
   {
     name: "Healthcare",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2680&auto=format&fit=crop",
+    image: "/healthcare.jpg",
     desc: "Sterile, biological protection for critical environments."
   },
   {
     name: "Mining",
-    image: "https://images.unsplash.com/photo-1599939571322-792a326991f2?q=80&w=2574&auto=format&fit=crop",
+    image: "/mining.jpg",
     desc: "Crush protection and high visibility for subterranean work."
   },
   {

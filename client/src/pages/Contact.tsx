@@ -4,13 +4,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContactSubmission } from "@shared/schema";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle } from "lucide-react";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 export default function Contact() {
   const mutation = useSubmitContact();
+  const [showSuccess, setShowSuccess] = useState(false);
   
   const form = useForm<InsertContactSubmission>({
     resolver: zodResolver(insertContactSchema),
@@ -26,6 +28,8 @@ export default function Contact() {
     mutation.mutate(data, {
       onSuccess: () => {
         form.reset();
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 5000);
       }
     });
   };
@@ -51,8 +55,8 @@ export default function Contact() {
               <div className="space-y-8">
                 {[
                   { icon: Mail, title: "Email Us", content: "sales@partnergloves.com" },
-                  { icon: Phone, title: "Call Us", content: "+1 (555) 123-4567" },
-                  { icon: MapPin, title: "Visit Us", content: "123 Innovation Blvd, Tech District, NY" }
+                  { icon: Phone, title: "Call Us", content: "+91 98678 93902" },
+                  { icon: MapPin, title: "Visit Us", content: "jai baba chawal waki pada Naigaon east" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start space-x-6">
                     <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary shrink-0">
@@ -66,13 +70,28 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* Decorative Map Placeholder */}
+              {/* Google Maps Embed */}
               <div className="mt-12 h-64 rounded-2xl border border-white/10 bg-accent/20 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2674&auto=format&fit=crop')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <button className="bg-white/10 backdrop-blur-md px-6 py-2 rounded-lg border border-white/20 text-white font-medium group-hover:bg-primary group-hover:text-black transition-colors">
-                     View on Google Maps
-                   </button>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095919355!2d-74.00425878459395!3d40.71312937933039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316bb4b1c7%3A0x4e7b8b5b5b5b5b5b!2s123%20Innovation%20Blvd%2C%20Tech%20District%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale group-hover:grayscale-0 transition-all duration-500"
+                />
+                <div className="absolute bottom-4 right-4">
+                  <a 
+                    href="https://www.google.com/maps/place/19%C2%B022'00.8%22N+72%C2%B053'06.1%22E/@19.3668883,72.8824574,17z/data=!3m1!4b1!4m4!3m3!8m2!3d19.3668883!4d72.8850323?hl=en&entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20 text-white font-medium text-sm hover:bg-primary hover:text-black transition-colors inline-flex items-center"
+                  >
+                    <MapPin size={16} className="mr-2" />
+                    View on Google Maps
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -85,6 +104,18 @@ export default function Contact() {
               className="bg-accent/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full pointer-events-none" />
+              
+              {/* Success Message */}
+              {showSuccess && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-xl flex items-center gap-3"
+                >
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <p className="text-green-400 font-medium">Submitted!</p>
+                </motion.div>
+              )}
               
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative z-10">

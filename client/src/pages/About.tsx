@@ -34,17 +34,20 @@ export default function About() {
               viewport={{ once: true }}
               className="relative rounded-3xl overflow-hidden h-[600px] border border-white/10 group"
             >
-              {/* Warehouse/Team image */}
-              <img 
-                src="/assets/gloves2_1771408710952.jpg" 
-                alt="Our Manufacturing Unit" 
+              {/* Warehouse/Team Video */}
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              >
+                <source src="/WhatsApp_Video_2026-02-18_at_3.23.18_PM_1771408727902.mp4" type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
                   <p className="text-white font-medium italic">"We don't just make gloves. We engineer confidence."</p>
-                  <p className="text-primary mt-2 font-bold">- Sarah Jenkins, CEO</p>
                 </div>
               </div>
             </motion.div>
