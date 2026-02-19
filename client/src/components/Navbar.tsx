@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,6 +69,12 @@ export function Navbar() {
             </Link>
           ))}
           
+          <div className="flex items-center mr-2">
+            <div className="bg-accent/10 p-1 rounded-md">
+              <ThemeToggle />
+            </div>
+          </div>
+          
           <Link href="/contact">
             <button className="px-5 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-primary hover:text-black hover:border-primary transition-all duration-300 text-sm font-bold tracking-wide">
               GET QUOTE
@@ -76,12 +83,17 @@ export function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <div className="bg-accent/10 p-1 rounded-md">
+            <ThemeToggle />
+          </div>
+          <button
+            className="text-white"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
